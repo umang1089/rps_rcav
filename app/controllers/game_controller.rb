@@ -22,11 +22,11 @@ class GameController < ApplicationController
     @computer_move = moves.sample
 
     if @computer_move == "rock"
-      @outcome = "lost"
+      @outcome = "won"
     elsif @computer_move == "paper"
       @outcome = "tied"
     else
-      @outcome = "won"
+      @outcome = "lost"
     end
 
     render("game/play_paper.html.erb")
@@ -41,9 +41,9 @@ class GameController < ApplicationController
     if @computer_move == "rock"
       @outcome = "lost"
     elsif @computer_move == "paper"
-      @outcome = "tied"
-    else
       @outcome = "won"
+    else
+      @outcome = "tied"
     end
 
       render("game/play_scissors.html.erb")
